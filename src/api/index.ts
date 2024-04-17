@@ -1,6 +1,6 @@
 import { ProductProps } from '../mocks/handlers';
 
-export const getPosts = async () => {
+export const getProducts = async () => {
   try {
     const result = await fetch('/posts');
     const jsonResult = await result.json();
@@ -9,7 +9,7 @@ export const getPosts = async () => {
     throw new Error(`Something went wrong ${JSON.stringify(err)}`);
   }
 };
-export const getFilteredPosts = async (title: string) => {
+export const getFilteredProducts = async (title: string) => {
   try {
     const result = await fetch(`/posts/${title}`);
     const jsonResult = await result.json();
@@ -19,7 +19,7 @@ export const getFilteredPosts = async (title: string) => {
   }
 };
 
-export const createPost = async (data: Omit<ProductProps, 'id'>) => {
+export const createProducts = async (data: Omit<ProductProps, 'id'>) => {
   try {
     const result = await fetch('/posts', {
       method: 'POST',
@@ -35,7 +35,7 @@ export const createPost = async (data: Omit<ProductProps, 'id'>) => {
   }
 };
 
-export const deletePost = async (id: number) => {
+export const deleteProducts = async (id: number) => {
   try {
     const result = await fetch(`/posts/${id}`, {
       method: 'DELETE',
@@ -50,7 +50,7 @@ export const deletePost = async (id: number) => {
   }
 };
 
-export const updatePost = async (
+export const updateProducts = async (
   id: number,
   data: { title?: string; description?: string },
 ) => {

@@ -18,7 +18,6 @@ const Dashboard = () => {
         </MenuButton>
         <MenuList>
           <MenuItem onClick={() => navigate('/list')}>List page</MenuItem>
-          <MenuItem onClick={() => navigate('/todo')}>TODO app</MenuItem>
           <MenuItem onClick={() => navigate('/filter')}>
             Filter component
           </MenuItem>

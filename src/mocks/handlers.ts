@@ -22,6 +22,7 @@ export type ProductProps = {
   id: number;
   stock: number;
   price: number;
+  thumbnail: string;
 };
 
 export const handlers = [

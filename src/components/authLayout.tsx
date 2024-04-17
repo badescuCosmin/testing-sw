@@ -1,6 +1,6 @@
 import { Box, Text } from '@chakra-ui/react';
 import { Link, Outlet } from 'react-router-dom';
-import { useAuthLayout } from './authLayout.hook';
+import { useAuthLayout } from '../hooks/authLayout.hook';
 
 const AuthLayut = () => {
   const {

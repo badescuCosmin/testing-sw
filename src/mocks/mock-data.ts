@@ -579,4 +579,5 @@ export let allPosts = [
   description: p.description,
   price: p.price,
   stock: p.stock,
+  thumbnail: p.thumbnail,
 }));
