@@ -32,7 +32,7 @@ export const handlers = [
   http.get('/posts', () => {
     return HttpResponse.json(allPosts);
   }),
-  http.get<{ title: string }, {}, ProductProps[], '/posts/:title'>(
+  http.get<{ title: string }, never, ProductProps[], '/posts/:title'>(
     '/posts/:title',
     async ({ params }) => {
       const filteredProducts = allPosts.filter(p =>
@@ -42,7 +42,7 @@ export const handlers = [
       return HttpResponse.json(filteredProducts);
     },
   ),
-  http.post<{}, ProductProps, ProductProps, '/posts'>(
+  http.post<never, ProductProps, ProductProps, '/posts'>(
     '/posts',
     async ({ request }) => {
       // Read the intercepted request body as JSON.
@@ -58,7 +58,7 @@ export const handlers = [
     },
   ),
 
-  http.delete<{ id: string }, {}, {}>('/posts/:id', ({ params }) => {
+  http.delete<{ id: string }, never, never>('/posts/:id', ({ params }) => {
     const newArray = allPosts.filter(p => p.id !== Number(params.id));
     allPosts = newArray;
     return HttpResponse.json({ status: 202 });

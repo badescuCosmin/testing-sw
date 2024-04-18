@@ -11,12 +11,12 @@ import {
   FormLabel,
   Input,
 } from '@chakra-ui/react';
-import React, { useState } from 'react';
+import { useRef, useState } from 'react';
 import { ProductProps } from '../mocks/handlers';
 
 export const TransitionExample = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const cancelRef = React.useRef<any>();
+  const cancelRef = useRef<HTMLButtonElement>(null); // Correct type for the ref
 
   const [form, setForm] = useState<Omit<ProductProps, 'id'>>({
     thumbnail: '',

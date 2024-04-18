@@ -1,4 +1,4 @@
-export let allPosts = [
+export const allPosts = [
   {
     id: 1,
     title: 'iPhone 9',
