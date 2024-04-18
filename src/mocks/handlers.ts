@@ -1,5 +1,5 @@
 // src/mocks/handlers.js
-import { HttpResponse, delay, http } from 'msw';
+import { HttpResponse, http } from 'msw';
 import { allPosts as Products } from './mock-data';
 
 let allPosts = [...Products];

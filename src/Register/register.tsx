@@ -51,7 +51,7 @@ const SCHEMA = {
   },
 };
 
-export const Register = () => {
+const Register = () => {
   const form = useValidate(SCHEMA);
   const navigate = useNavigate();
   const { handleChange, formErrors, isFormValid, values } = form;
@@ -129,3 +129,5 @@ export const Register = () => {
     </Box>
   );
 };
+
+export default Register;

@@ -43,7 +43,7 @@ const SCHEMA = {
   },
 };
 
-export const Login = () => {
+const Login = () => {
   const form = useValidate(SCHEMA);
   const navigate = useNavigate();
   const { handleChange, formErrors, isFormValid, values } = form;
@@ -91,6 +91,7 @@ export const Login = () => {
       </FormControl>
 
       <Button
+        data-testid="login-btn"
         isDisabled={!isFormValid}
         mt={10}
         onClick={() => {
@@ -104,3 +105,5 @@ export const Login = () => {
     </Box>
   );
 };
+
+export default Login;
