@@ -7,6 +7,12 @@ jobs:
     steps:
       - uses: actions/checkout@v4
         name: Checkout Repo
+      - uses: actions/setup-node@v4
+        name: Setup Node
+        with:
+          node-version: '20'
+          cache: 'npm'
+      - run: npm ci
       - run: npm run lint
   test-app:
     runs-on: ubuntu-latest
