@@ -5,14 +5,12 @@ import Login from './login';
 
 import { BrowserRouter } from 'react-router-dom';
 
-describe('Suite', () => {
-  test('Renders login', () => {
-    render(
-      <BrowserRouter>
-        <Login />
-      </BrowserRouter>,
-    );
-    const button = screen.getByTestId('login-btn');
-    expect(button).toBeInTheDocument();
-  });
+test('Renders login', () => {
+  render(
+    <BrowserRouter>
+      <Login />
+    </BrowserRouter>,
+  );
+  const button = screen.getByTestId('login-btn');
+  expect(button).toBeInTheDocument();
 });
