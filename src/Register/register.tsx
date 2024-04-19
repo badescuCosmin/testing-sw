@@ -8,7 +8,7 @@ import {
 } from '@chakra-ui/react';
 
 import { useNavigate } from 'react-router-dom';
-import { useValidate } from '../hooks/validation.hook';
+import { useValidate } from '../hooks/usevalidate.hook';
 
 const SCHEMA = {
   email: {

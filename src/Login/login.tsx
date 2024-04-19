@@ -8,9 +8,9 @@ import {
 } from '@chakra-ui/react';
 
 import { useNavigate } from 'react-router-dom';
-import { useValidate } from '../hooks/validation.hook';
+import { useValidate } from '../hooks/usevalidate.hook';
 
-const SCHEMA = {
+export const SCHEMA = {
   email: {
     isRequired: true,
     rules: [
@@ -24,7 +24,7 @@ const SCHEMA = {
       },
       {
         test: /^.{6,49}$/,
-        error: 'The length should be between 6 and 10 chars',
+        error: 'The length should be between 6 and 49 chars',
       },
     ],
   },
@@ -58,6 +58,7 @@ const Login = () => {
       >
         <FormLabel>Email</FormLabel>
         <Input
+          data-testid="email-input"
           type="email"
           placeholder="Email"
           name="email"
@@ -77,6 +78,7 @@ const Login = () => {
       >
         <FormLabel>Passowrd</FormLabel>
         <Input
+          data-testid="password-input"
           placeholder="Password"
           type="password"
           name="password"
@@ -84,7 +86,7 @@ const Login = () => {
           value={values?.password || ''}
         />
         {formErrors?.password?.map((err, i) => (
-          <Text key={i} color="red">
+          <Text data-testid="error-message" key={i} color="red">
             {err}
           </Text>
         ))}

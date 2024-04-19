@@ -8,10 +8,9 @@ export default defineConfig({
     globals: true,
     setupFiles: './src/tests/setup.ts',
     coverage: {
-      enabled: true,
+      enabled: false,
       provider: 'v8',
       include: ['src'],
     },
-    reporters: ['html'],
   },
 });
