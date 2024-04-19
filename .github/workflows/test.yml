@@ -1,5 +1,5 @@
 name: learn-github-actions
-run-name: ${{ github.actor }} is learning GitHub Actions
+run-name: ${{ github.actor }} work with Github actions
 on: [push]
 jobs:
   lint-app:
@@ -12,7 +12,7 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
-      - run: npm ci
+      - run: npm ci --legacy-peer-deps
       - run: npm run lint
   test-app:
     runs-on: ubuntu-latest
@@ -24,7 +24,7 @@ jobs:
         with:
           node-version: '20'
           cache: 'npm'
-      - run: npm ci
+      - run: npm ci --legacy-peer-deps
       - run: npm run test
   build-app:
     runs-on: ubuntu-latest
@@ -34,7 +34,7 @@ jobs:
         with:
           node-version: '20'
       - name: Install
-        run: npm ci
+        run: npm ci --legacy-peer-deps
       - run: npm run build
   coverage:
     runs-on: ubuntu-latest
@@ -45,7 +45,7 @@ jobs:
         with:
           node-version: 18
           cache: 'npm'
-      - run: npm ci
+      - run: npm ci --legacy-peer-deps
       - run: npm run coverage
       - uses: actions/upload-artifact@v3
         name: Archive coverage report
